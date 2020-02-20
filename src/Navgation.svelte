@@ -118,7 +118,7 @@ onMount(() => {
   }
 
   .li {
-    padding: 10px;
+    padding: 13px;
   }
 
   .li.menu {
