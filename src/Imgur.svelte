@@ -72,7 +72,6 @@ onMount (async () => {
   fancy = fancyEntry()
   // console.log(document.documentElement.scrollTop, '=---')
   const { scrollTop } = document.documentElement // 绑定的值都会有一定延迟，直接获取快
-  console.log(scrollTop)
   imgs_path.map(({ target }) => {
     target.top = target.node.getBoundingClientRect().top + scrollTop
   })
