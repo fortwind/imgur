@@ -1,16 +1,16 @@
 <script>
-import { onMount } from 'svelte'
+// import { onMount } from 'svelte'
 export let scrolly
 
 let header
-let stickpos
+let stickpos = 774
 
-onMount(() => {
-  const { top } = header.getBoundingClientRect()
-  const { scrollTop } = document.documentElement
-  stickpos = top + scrollTop
-  console.log(top, scrollTop)
-})
+// onMount(() => {
+//   const { top } = header.getBoundingClientRect()
+//   const { scrollTop } = document.documentElement // 部署之后这样获取有问题与scrolly一样先会是0，然后才是真实值
+//   stickpos = top + scrollTop
+//   console.log(top, scrollTop)
+// })
 </script>
 
 <div bind:this={header} class="header-container">

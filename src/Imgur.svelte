@@ -75,6 +75,7 @@ onMount (async () => {
   imgs_path.map(({ target }) => {
     target.top = target.node.getBoundingClientRect().top + scrollTop
   })
+  console.log(scrollTop)
 })
 </script>
 

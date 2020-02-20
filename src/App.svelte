@@ -2,8 +2,7 @@
 import Background from './Background.svelte'
 import Imgur from './Imgur.svelte'
 import Navgation from './Navgation.svelte'
-
-let scrolly = 0
+let scrolly
 </script>
 
 <svelte:window bind:scrollY={scrolly}/>
