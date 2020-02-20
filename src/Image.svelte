@@ -73,7 +73,7 @@ onMount(() => {
   height: 28px;
   bottom: 0;
   left: 0;
-  padding-right: 12px;
+  padding: 0 12px;
   color: #ffffff;
   background: #00000031;
   line-height: 25px;
@@ -81,6 +81,9 @@ onMount(() => {
   box-sizing: border-box;
   transform: translateY(100%);
   transition: transform 0.3s ease;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .image:hover .img-container {

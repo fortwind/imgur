@@ -22,13 +22,13 @@ const getPath = () => fetch(`https://gitee.com/api/v5/repos/${owner}/${repo}/git
 	.catch(err => err)
 
 function fillImgs (tree) {
-  const type = ['jpg', 'png', 'jpeg']
-  const regex_tree = /^img\/(\w+\/)*(\w+\.\w+)$/
+  const type = ['jpg', 'png', 'jpeg', 'gif']
+  const regex_tree = /^img\/(.+\/)*(.+\.\w+)$/
 
   imgs_path_backup = imgs_path = tree.map(v => {
     const val = regex_tree.exec(v.path)
     const valsplit = val ? val[2].split('.') : [false]
-    if (valsplit[0] && type.includes(valsplit[1].toLowerCase())) {
+    if (valsplit[0] && type.includes(valsplit.splice(-1)[0].toLowerCase())) {
       v.name = val[2]
       v.target = { node: undefined, load: false, lazy: true }
       return v
@@ -72,6 +72,7 @@ onMount (async () => {
   fancy = fancyEntry()
   // console.log(document.documentElement.scrollTop, '=---')
   const { scrollTop } = document.documentElement // 绑定的值都会有一定延迟，直接获取快
+  console.log(scrollTop)
   imgs_path.map(({ target }) => {
     target.top = target.node.getBoundingClientRect().top + scrollTop
   })
