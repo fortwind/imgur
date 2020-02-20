@@ -74,7 +74,6 @@ onMount (async () => {
   const { scrollTop } = document.documentElement // 绑定的值都会有一定延迟，直接获取快
   imgs_path.map(({ target }) => {
     target.top = target.node.getBoundingClientRect().top + scrollTop
-    console.log(target.top)
   })
 })
 </script>
