@@ -22,7 +22,6 @@ onMount(() => {
   <div class="image" on:click={getBig}>
     <div class="img-container">
       <!-- <img bind:this={img} class="img" data-src="{src}" src="{lazyload ? ((scrolly + 800) > imgtop ? src : '') : src}" alt="img"> -->
-      <!-- 这边 bindthis 一下父组件可以直接获取该元素 -->
       <img bind:this={img} class="img{decorate_class}" data-src={src} alt="img">
       <div class="name">{name}</div>
     </div>
@@ -31,7 +30,7 @@ onMount(() => {
 
 <style>
 .image-container {
-  /* display: inline-block; */
+  display: inline-block;
   width: 25%;
   padding: 12px;
   box-sizing: border-box;
@@ -91,7 +90,6 @@ onMount(() => {
 .image:hover .img-container .name {
   transform: translateY(0);
 }
-
 
 @media (max-width: 992px) {
 	.image-container {

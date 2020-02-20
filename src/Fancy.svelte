@@ -44,12 +44,16 @@ function fancyClose () {
     visible = false
   }, 500)
 }
+
+function scrollHandle () {
+  console.log(999)
+}
 </script>
 
 <div bind:this={fancy} class="fancy{animate_class}" style="visibility: {visible ? 'visible' : 'hidden'}">
   <div class="fancy-mask" on:click={() => { show = false }}></div>
   <div class="fancy-imgbox">
-    <img bind:this={node.img} alt="" class="fancy-img" style="display: {node.loading ? 'none' : ''};height: {node.h}px;width: {node.w}px">
+    <img bind:this={node.img} on:mousewhell={scrollHandle} alt="" class="fancy-img" style="display: {node.loading ? 'none' : ''};height: {node.h}px;width: {node.w}px">
     <span style="display: {node.loading ? '' : 'none'}">Loading...</span>
   </div>
   <div class="fancy-close">
