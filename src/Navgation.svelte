@@ -9,7 +9,7 @@ onMount(() => {
   const { top } = header.getBoundingClientRect()
   const { scrollTop } = document.documentElement
   stickpos = top + scrollTop
-  console.log(stickpos)
+  console.log(top, scrollTop)
 })
 </script>
 
