@@ -22,7 +22,7 @@ const getPath = () => fetch(`https://gitee.com/api/v5/repos/${owner}/${repo}/git
 	.catch(err => err)
 
 function fillImgs (tree) {
-  const type = ['jpg', 'png', 'jpeg', 'gif']
+  const type = ['jpg', 'png', 'jpeg', 'gif', 'webp']
   const regex_tree = /^img\/(.+\/)*(.+\.\w+)$/
 
   imgs_path_backup = imgs_path = tree.map(v => {
